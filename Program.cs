@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Xml.XPath;
 
 namespace C_Sharp_1
 {
@@ -181,8 +183,8 @@ namespace C_Sharp_1
             MyDynamicVar = default(bool);
             Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
 
-            Nullable<int> i = null;
-            Console.WriteLine("Nullable Varible = "+ (i));
+            Nullable<int> nulab = null;
+            Console.WriteLine("Nullable Varible = "+ (nulab));
 
 
             // Anonymous Type : we can't change the first value // we have to create it using the operato "new"
@@ -322,8 +324,122 @@ namespace C_Sharp_1
             Console.WriteLine(enWKD);
 
             // readLine 
+            Console.WriteLine("Enter A String: ");
+            string @ReadLine = Console.ReadLine();
+            Console.WriteLine(@ReadLine);   
+
+            int RD = Convert.ToInt32(@ReadLine);
+
+            Console.WriteLine($" iint input = {RD}");
+
+
+            int number = 10, result;
+            bool flag = true;
+
+            result = +number;
+            Console.WriteLine("+number = " + result);
+
+            result = -number;
+            Console.WriteLine("-number = " + result);
+
+            result = ++number;
+            Console.WriteLine("++number = " + result);
+
+            result = --number;
+            Console.WriteLine("--number = " + result);
+
+            Console.WriteLine("!flag = " + (!flag));
+
+            Console.WriteLine((number++)); // print than add 1
+            Console.WriteLine((number));
+
+            Console.WriteLine((++number)); // add1 before print
+            Console.WriteLine((number));
+
+
+            for (int zz = 1; zz <= 5; ++zz)
+            {
+
+                if (zz == 3)
+                {
+                    continue;
+                }
+
+                Console.WriteLine(zz);
+            }
+
+            int[] Numbs = new int[6] { 01, 11, 111, 11, 11, 455 };
+
+
+            /* Or we do that 
+             * 
+            numbs[0] = 10;
+            numbs[1] = 11;  
+            numbs[2] = 12;
+            numbs[3] = 13;
+            numbs[4] = 14;
+            numbs[5] = 15;
+           */
+
+
+            for (int i = 0; i < 6; ++i)
+            {
+                Console.WriteLine($"\n // Number [{i}] = {Numbs[i]}");
+            }
+
+
+            Console.WriteLine("2nd Array[]");
+
+            int[] array = { 45, 12, 212, 1235, 21254, 70007 };
+
+            for (int j = 0; j < 6; ++j)
+            {
+                Console.WriteLine($"\n // Number [{j}] = {array[j]}");
+            }
+
+            Console.WriteLine("_2D Array : ");
+
+            int[,] _2Darray = new int[2, 3]
             
-            Console.ReadKey();
+            { { 1, 2, 3 }, { 4, 5, 6 } };
+
+
+            for (int H = 0; H < 2; H++)
+            {
+                for (int K = 0; K<3;K++)
+                {
+                    Console.WriteLine(_2Darray[H,K]);
+                }
+            }
+
+            Console.WriteLine("Foreach loop :");
+
+            foreach (var cX in _2Darray)
+            {
+                Console.WriteLine(cX);
+            }
+
+            // min and max by using system.Link;
+
+            array.Min();
+            array.Max();
+
+            array.Count();
+            array.Average();
+            array.Sum();
+
+
+
+
+
+
+
+
+
+
+
+
+                Console.ReadKey();
         }
     }
 }
