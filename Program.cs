@@ -6,6 +6,7 @@ using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 
@@ -58,6 +59,17 @@ namespace C_Sharp_1
     }
     internal class Program
     {
+        //method with parameter default
+        static void PrintMyName(string Name = "RRRRRRRRRRR")
+        {
+            Console.WriteLine("Rouabah Mohammed Rafik Function Print : Parameter = {0} \a",Name);
+        }
+        //overloading
+        static void PrintMyName(string FM , string LN)
+        {
+            Console.WriteLine("Rouabah Mohammed Rafik Function Print : Parameter = \a" + FM + " " + LN); ;
+        }
+
         static void Main(string[] args)
         {
             Console.Write("hello 10 + 20 = " + (10 + 20)); // dosn;t go to another line
@@ -429,17 +441,22 @@ namespace C_Sharp_1
             array.Sum();
 
 
+            // C MATH 
+
+            int Mth = 65;
+            int Mth2 = 35;
+
+            Console.WriteLine("Max : {0}", Math.Max(Mth, Mth2));
+            Console.WriteLine("Min : {0}",Math.Min(Mth, Mth2));
+            Console.WriteLine("Sqrt(4) : {0}",Math.Sqrt(4));
+            Console.WriteLine("5 Pow 2 : {0}",Math.Pow(5, 2));
 
 
+            PrintMyName();
+            PrintMyName(Name: "XXXXXXXXX");
+            PrintMyName(FM: "Rouabah", LN: "Med Rafik");
 
-
-
-
-
-
-
-
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
