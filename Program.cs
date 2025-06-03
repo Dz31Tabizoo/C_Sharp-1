@@ -456,6 +456,31 @@ namespace C_Sharp_1
             PrintMyName(Name: "XXXXXXXXX");
             PrintMyName(FM: "Rouabah", LN: "Med Rafik");
 
+
+            // TRY & CATCH EXEPTION
+            /*
+            try
+            {
+                int[] Myarr = { 1, 2, };
+                Console.WriteLine(Myarr[10]);
+            }
+            catch (FormatException ex) // to learn more about this 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            */
+
+            // random Numb
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(rnd.Next(10,20));
+            }
+
+
+
             Console.ReadKey();
         }
     }
